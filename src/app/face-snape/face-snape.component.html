@@ -1,0 +1,13 @@
+<p *ngIf="faceSnap.location"></p>
+
+<div class="face-snap-card"  [ngClass]="{snapped: buttonMessage === 'Oops, un Snap!' }">
+<p>🤌 title: {{faceSnap.title}}</p>
+<img  class="image" [src]="faceSnap.imageUrl" [alt]="faceSnap.description"> 
+<p> <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">{{faceSnap.snaps}}</span></p>
+<p *ngIf="faceSnap.location">prise à {{faceSnap.location}}</p>
+<p >Mis en ligne le {{faceSnap.createdDate | date: 'à hh:mm le d  MMMM yyyy'}}</p>
+{{123 | currency:'EUR'}}
+{{0.556| percent: '1.0-1'}}
+<button (click)="OhSnap()">{{buttonMessage}}</button>
+
+</div>
